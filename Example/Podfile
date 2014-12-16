@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'SlideOutMenu', :exclusive => true do
+  pod "SlideOutMenu", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "SlideOutMenu", :path => "../"
+
+  
+end

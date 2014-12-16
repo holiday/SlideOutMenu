@@ -9,30 +9,24 @@
 
 Pod::Spec.new do |s|
   s.name             = "SlideOutMenu"
-  s.version          = "0.1.0"
-  s.summary          = "A short description of SlideOutMenu."
+  s.version          = "1.0.0"
+  s.summary          = "Slide out menu for iOS"
   s.description      = <<-DESC
-                       An optional longer description of SlideOutMenu
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
-                       DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/SlideOutMenu"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+                          Customizable slide out menu for iOS. Since it relies on UIViews and 
+                          uses view containment, this library is very versatile in terms of 
+                          customizabiliy and configuration. 
+                        DESC
+  s.homepage     = "https://github.com/holiday/SlideOutMenu"
   s.license          = 'MIT'
   s.author           = { "rashaad ramdeen" => "rashaad.ramdeen@gmail.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/SlideOutMenu.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/holiday/SlideOutMenu.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/1337holiday'
 
-  s.platform     = :ios, '7.0'
+  s.platform     = :ios, '8.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes'
   s.resource_bundles = {
     'SlideOutMenu' => ['Pod/Assets/*.png']
   }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

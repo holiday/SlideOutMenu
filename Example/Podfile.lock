@@ -1,0 +1,14 @@
+PODS:
+  - SlideOutMenu (0.1.0)
+
+DEPENDENCIES:
+  - SlideOutMenu (from `../`)
+
+EXTERNAL SOURCES:
+  SlideOutMenu:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SlideOutMenu: f52fedab4b0f69f0d198058c5b11667db1870944
+
+COCOAPODS: 0.35.0

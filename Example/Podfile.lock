@@ -1,5 +1,5 @@
 PODS:
-  - SlideOutMenu (0.1.0)
+  - SlideOutMenu (1.0.0)
 
 DEPENDENCIES:
   - SlideOutMenu (from `../`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  SlideOutMenu: f52fedab4b0f69f0d198058c5b11667db1870944
+  SlideOutMenu: 69191f59b8c03ffae6b651d1caaf447ac053bb39
 
 COCOAPODS: 0.35.0

@@ -8,7 +8,7 @@
 
 // SlideOutMenu
 #define COCOAPODS_POD_AVAILABLE_SlideOutMenu
-#define COCOAPODS_VERSION_MAJOR_SlideOutMenu 0
-#define COCOAPODS_VERSION_MINOR_SlideOutMenu 1
+#define COCOAPODS_VERSION_MAJOR_SlideOutMenu 1
+#define COCOAPODS_VERSION_MINOR_SlideOutMenu 0
 #define COCOAPODS_VERSION_PATCH_SlideOutMenu 0
 

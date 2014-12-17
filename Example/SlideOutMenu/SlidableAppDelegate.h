@@ -2,7 +2,7 @@
 //  SlidableAppDelegate.h
 //  SlideOutMenu
 //
-//  Created by CocoaPods on 12/16/2014.
+//  Created by CocoaPods on 12/17/2014.
 //  Copyright (c) 2014 rashaad ramdeen. All rights reserved.
 //
 

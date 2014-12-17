@@ -2,17 +2,44 @@
 //  SlidableAppDelegate.m
 //  SlideOutMenu
 //
-//  Created by CocoaPods on 12/16/2014.
+//  Created by CocoaPods on 12/17/2014.
 //  Copyright (c) 2014 rashaad ramdeen. All rights reserved.
 //
 
 #import "SlidableAppDelegate.h"
+#import "SlidableMenuViewController.h"
 
 @implementation SlidableAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    UINavigationController *greenVC = (UINavigationController *)[mainStoryBoard instantiateViewControllerWithIdentifier:@"greenVC"];
+    //this title will be used for the menu link
+    [greenVC setTitle:@"Green Link"];
+    
+    UINavigationController *blueVC = (UINavigationController *)[mainStoryBoard instantiateViewControllerWithIdentifier:@"blueVC"];
+    //this title will be used for the menu link
+    [blueVC setTitle:@"Blue Link"];
+    
+    UINavigationController *tableVC = (UINavigationController *)[mainStoryBoard instantiateViewControllerWithIdentifier:@"tableVC"];
+    //this title will be used for the menu link
+    [tableVC setTitle:@"Table Link"];
+    
+    UINavigationController *mapVC = (UINavigationController *)[mainStoryBoard instantiateViewControllerWithIdentifier:@"mapVC"];
+    //this title will be used for the menu link
+    [mapVC setTitle:@"Map Link"];
+    
+    //our slidable menu controller
+    SlidableMenuViewController *slidableVC = [[SlidableMenuViewController alloc] initWithViewControllers:@[greenVC, blueVC, tableVC, mapVC] andMenuIcon:@"list23_24px"];
+    
+    self.window.rootViewController = slidableVC;
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 							

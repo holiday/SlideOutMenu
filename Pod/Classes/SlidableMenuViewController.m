@@ -56,12 +56,12 @@
     self.slideOutPercentage = 0.8f;
     
     //detect swipe right
-    UISwipeGestureRecognizer *swipeRightGR = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGesture:)];
+    UISwipeGestureRecognizer *swipeRightGR = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGestureRight:)];
     swipeRightGR.direction = UISwipeGestureRecognizerDirectionRight;
     [self.view addGestureRecognizer:swipeRightGR];
     
     //detect swipe left
-    UISwipeGestureRecognizer *swipeLeftGR = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGesture:)];
+    UISwipeGestureRecognizer *swipeLeftGR = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGestureLeft:)];
     swipeLeftGR.direction = UISwipeGestureRecognizerDirectionLeft;
     [self.view addGestureRecognizer:swipeLeftGR];
     
@@ -273,8 +273,16 @@
     return CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
 }
 
-- (void)handleSwipeGesture:(UIPanGestureRecognizer *)swipeGestureRecognizer{
-    [self toggleMenuVisibility:self];
+- (void)handleSwipeGestureLeft:(UIPanGestureRecognizer *)swipeGestureRecognizer{
+    if (self.isMenuVisible) {
+        [self toggleMenuVisibility:self];
+    }
+}
+
+- (void)handleSwipeGestureRight:(UIPanGestureRecognizer *)swipeGestureRecognizer{
+    if (!self.isMenuVisible) {
+        [self toggleMenuVisibility:self];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

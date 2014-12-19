@@ -1,16 +1,18 @@
 //
-//  SlideMenuViewController.h
-//  SlideOutMenu
+//  SlidableMenuViewController.h
+//  Pods
 //
-//  Created by Ramdeen, Rashaad (TEKSystems) on 12/2/14.
-//  Copyright (c) 2014 Ramdeen, Rashaad (TEKSystems). All rights reserved.
+//  Created by Ramdeen, Rashaad on 12/19/14.
+//
 //
 
 #import <UIKit/UIKit.h>
+#import "SlidableViewController.h"
 
-@interface SlidableMenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface SlidableMenuViewController : UIViewController
 
-- (id)initWithViewControllers:(NSArray *)viewControllers andMenuIcon:(NSString *)imageName;
-- (void)initNavigationBar:(UIViewController *)viewController;
+@property (nonatomic, weak) id <SlidableMenuViewControllerDelegate> delegate;
+
+- (UIView *)getMenuView; //returns the View that will be used as the slide out navigation
 
 @end

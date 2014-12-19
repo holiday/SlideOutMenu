@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SlidableViewController : UIViewController
+@interface ExampleViewController : UIViewController
 
 @end

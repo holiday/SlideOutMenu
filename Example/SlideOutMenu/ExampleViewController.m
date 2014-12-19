@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 rashaad ramdeen. All rights reserved.
 //
 
-#import "SlidableViewController.h"
+#import "ExampleViewController.h"
 
-@interface SlidableViewController ()
+@interface ExampleViewController ()
 
 @end
 
-@implementation SlidableViewController
+@implementation ExampleViewController
 
 - (void)viewDidLoad
 {

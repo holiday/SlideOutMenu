@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 rashaad ramdeen. All rights reserved.
 //
 
-#import "SlidableAppDelegate.h"
-#import "SlidableMenuViewController.h"
+#import "ExampleAppDelegate.h"
+#import "SlidableViewController.h"
+#import "CustomMenuViewController.h"
 
-@implementation SlidableAppDelegate
+@implementation ExampleAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -34,8 +34,10 @@
     //this title will be used for the menu link
     [mapVC setTitle:@"Map Link"];
     
+    CustomMenuViewController *customMVC = (CustomMenuViewController *)[mainStoryBoard instantiateViewControllerWithIdentifier:@"customMenu"];
+    
     //our slidable menu controller
-    SlidableMenuViewController *slidableVC = [[SlidableMenuViewController alloc] initWithViewControllers:@[greenVC, blueVC, tableVC, mapVC] andMenuIcon:@"list23_24px"];
+    SlidableViewController *slidableVC = [[SlidableViewController alloc] initWithViewControllers:@[greenVC, blueVC, tableVC, mapVC] andMenuViewController:customMVC];
     
     self.window.rootViewController = slidableVC;
     

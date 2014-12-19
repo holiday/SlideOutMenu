@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SlidableAppDelegate : UIResponder <UIApplicationDelegate>
+@interface ExampleAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

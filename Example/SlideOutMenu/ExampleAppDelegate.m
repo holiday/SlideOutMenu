@@ -34,10 +34,14 @@
     //this title will be used for the menu link
     [mapVC setTitle:@"Map Link"];
     
+    UINavigationController *settingsVC = (UINavigationController *)[mainStoryBoard instantiateViewControllerWithIdentifier:@"settingsVC"];
+    //this title will be used for the menu link
+    [settingsVC setTitle:@"Map Link"];
+    
     CustomMenuViewController *customMVC = (CustomMenuViewController *)[mainStoryBoard instantiateViewControllerWithIdentifier:@"customMenu"];
     
     //our slidable menu controller
-    SlidableViewController *slidableVC = [[SlidableViewController alloc] initWithViewControllers:@[greenVC, blueVC, tableVC, mapVC] andMenuViewController:customMVC];
+    SlidableViewController *slidableVC = [[SlidableViewController alloc] initWithViewControllers:@[greenVC, blueVC, tableVC, mapVC, settingsVC] andMenuViewController:customMVC andMenuWidth:320];
     
     self.window.rootViewController = slidableVC;
     

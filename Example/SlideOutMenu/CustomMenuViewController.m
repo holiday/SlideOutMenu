@@ -25,6 +25,9 @@
     
     [self.tableView registerClass:[MenuTableViewCell class] forCellReuseIdentifier:@"MenuCell"];
     [self.tableView setBackgroundColor:[UIColor colorWithRed:85/255.0 green:85/255.0 blue:85/255.0 alpha:1.0]];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -55,12 +58,15 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    //Forward the indexPath to the SlidableViewController so it can switch the current view
     [self.delegate didSelectMenuItem:indexPath];
 }
 
 - (UIView *)getMenuView{
     return self.view;
+}
+- (IBAction)openSettings:(id)sender {
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:4 inSection:0];
+    [self.delegate didSelectMenuItem:indexPath];
 }
 
 @end

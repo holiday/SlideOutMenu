@@ -7,7 +7,6 @@
 //
 
 #import "MenuTableViewCell.h"
-#import "FixedBackgroundLabel.h"
 
 @implementation MenuTableViewCell
 

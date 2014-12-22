@@ -13,12 +13,14 @@
 @interface SlidableViewController ()
 
 @property (nonatomic, strong) NSArray *viewControllers;
-@property (nonatomic, strong) UIViewController *currentViewController;
+@property (nonatomic, strong) UINavigationController *currentViewController;
+@property (nonatomic, strong) UIView *currentView;
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) SlidableMenuViewController *slidableMenuViewController;
 @property (nonatomic, strong) UIView *menuView;
 @property (nonatomic, assign) BOOL isMenuVisible;
 @property (nonatomic, assign) float slideOutPercentage; //Amount to slide out VC when menu button is clicked
+@property (nonatomic, assign) CGFloat slideOutAmount;
 
 @end
 
@@ -51,11 +53,9 @@
         //make a copy of the view controllers
         self.viewControllers = [tempVCs copy];
         self.currentViewController = [self.viewControllers objectAtIndex:0];
+        self.currentView = self.currentViewController.visibleViewController.view;
         self.isMenuVisible = NO;
     }
-    
-    //default slide out width
-    self.slideOutPercentage = 0.8f;
     
     return self;
 }
@@ -71,6 +71,25 @@
     
     return self;
 }
+
+- (id)initWithViewControllers:(NSArray *)viewControllers andMenuViewController:(SlidableMenuViewController *)menuViewController andMenuWidth:(NSInteger)menuWidth{
+    self = [self initWithViewControllers:viewControllers andMenuViewController:menuViewController];
+    if (self) {
+        self.slideOutAmount = menuWidth;
+    }
+    
+    return self;
+}
+
+- (id)initWithViewControllers:(NSArray *)viewControllers andMenuViewController:(SlidableMenuViewController *)menuViewController andSlideOutPercentage:(NSInteger)slideOutPercentage{
+    self = [self initWithViewControllers:viewControllers andMenuViewController:menuViewController];
+    if (self) {
+        self.slideOutPercentage = slideOutPercentage;
+    }
+    
+    return self;
+}
+
 /*
  *  This gets called when the view is requested of this ViewController so
  *  we need to build the view here
@@ -89,9 +108,9 @@
     
     self.containerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
-    [view addSubview:self.containerView];
+    [self.containerView addSubview: self.menuView];
     
-    [view addSubview: self.menuView];
+    [view addSubview:self.containerView];
     
     self.view = view;
     
@@ -129,13 +148,6 @@
     }
 }
 
-- (void)viewDidLoad{
-    //only gets called once when the view is loaded
-    
-    //register the cell identifier
-    //[[self.slidableMenuViewController getMenuView] registerClass:[UITableViewCell class] forCellReuseIdentifier:cellIdentifier];
-}
-
 - (UIStatusBarStyle) preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
@@ -171,28 +183,35 @@
     
     CGRect frame = [[UIScreen mainScreen] bounds];
     
+    __weak typeof(self) weakSelf = self;
+    
     if (self.isMenuVisible) {
-        //animate out the main view of the current view controller
+        //deactivate interactions on the currentView since it is in a slide out state
+        self.currentView.userInteractionEnabled = NO;
+        
+        //slide out
         [UIView animateWithDuration:0.25
                               delay:0.0
                             options:UIViewAnimationOptionCurveEaseOut
                          animations:^{
-                             self.currentViewController.view.frame = CGRectMake(self.slideOutPercentage * frame.size.width, 0, size.width, size.height);
+                             weakSelf.currentViewController.view.frame = CGRectMake([self slideOutAmount:frame], 0, size.width, size.height);
                          } completion:^(BOOL finished) {
                              //nothing
                          }];
     }else{
-        //animate in
+        //re-activate interactions on the currentView
+        self.currentView.userInteractionEnabled = YES;
+        
+        //slide in
         [UIView animateWithDuration:0.25
                               delay:0.0
                             options:UIViewAnimationOptionCurveEaseIn
                          animations:^{
-                             self.currentViewController.view.frame = CGRectMake(0, 0, size.width, size.height);
+                             weakSelf.currentViewController.view.frame = CGRectMake(0, 0, size.width, size.height);
                          } completion:^(BOOL finished) {
                              //nothing
                          }];
     }
-    
 }
 
 - (void)replaceVisibleViewControllerWithViewControllerAtIndex:(NSInteger)index{
@@ -250,6 +269,7 @@
                                 //set menu invisible
                                 self.isMenuVisible = NO;
                                 self.currentViewController = [self.viewControllers objectAtIndex:index];
+                                self.currentView = self.currentViewController.visibleViewController.view;
                             }];
 }
 
@@ -260,7 +280,7 @@
 
 - (CGRect)shiftedScreenFrame{
     CGRect frame = [[UIScreen mainScreen] bounds];
-    return CGRectMake(0, self.slideOutPercentage * frame.size.width, self.currentViewController.view.frame.size.width, self.currentViewController.view.frame.size.height);
+    return CGRectMake(0, [self slideOutAmount:frame], self.currentViewController.view.frame.size.width, self.currentViewController.view.frame.size.height);
 }
 
 - (CGRect)offScreenFrame{
@@ -271,6 +291,14 @@
 - (CGRect)onScreenFrame{
     //view bounds will be off screen at (x,y,width,height) -> (screen width, 0, screen width, screen height)
     return CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
+}
+
+- (CGFloat)slideOutAmount:(CGRect)frame {
+    if (self.slideOutAmount > 0) {
+        return self.slideOutAmount;
+    }
+    
+    return frame.size.width * self.slideOutPercentage;
 }
 
 - (void)handleSwipeGestureLeft:(UIPanGestureRecognizer *)swipeGestureRecognizer{
@@ -286,7 +314,10 @@
 }
 
 - (void)didSelectMenuItem:(NSIndexPath *)indexPath{
-    [self replaceVisibleViewControllerWithViewControllerAtIndex:indexPath.row];
+    //Only allow replacement if a valid index is provided
+    if (indexPath.row >= 0 && indexPath.row < [self.viewControllers count] && [self.viewControllers count] > 0) {
+        [self replaceVisibleViewControllerWithViewControllerAtIndex:indexPath.row];
+    }
 }
 
 @end

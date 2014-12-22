@@ -7,11 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FixedBackgroundLabel.h"
 
 @interface MenuTableViewCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UILabel *cellText;
 @property (strong, nonatomic) IBOutlet UILabel *cellLeft;
-@property (strong, nonatomic) IBOutlet FixedBackgroundLabel *notificationBadge;
 
 @end

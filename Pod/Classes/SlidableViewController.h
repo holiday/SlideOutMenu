@@ -23,6 +23,8 @@
 
 - (id)initWithViewControllers:(NSArray *)viewControllers;
 - (id)initWithViewControllers:(NSArray *)viewControllers andMenuViewController:(SlidableMenuViewController *)menuViewController;
+- (id)initWithViewControllers:(NSArray *)viewControllers andMenuViewController:(SlidableMenuViewController *)menuViewController andMenuWidth:(NSInteger)menuWidth;
+- (id)initWithViewControllers:(NSArray *)viewControllers andMenuViewController:(SlidableMenuViewController *)menuViewController andSlideOutPercentage:(NSInteger)slideOutPercentage;
 - (void)initNavigationBar:(UIViewController *)viewController;
 
 @end

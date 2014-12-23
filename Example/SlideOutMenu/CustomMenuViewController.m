@@ -66,6 +66,7 @@
 }
 - (IBAction)openSettings:(id)sender {
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:4 inSection:0];
+    [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     [self.delegate didSelectMenuItem:indexPath];
 }
 

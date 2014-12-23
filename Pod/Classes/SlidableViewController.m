@@ -215,7 +215,10 @@
 }
 
 - (void)replaceVisibleViewControllerWithViewControllerAtIndex:(NSInteger)index{
-    if ([self.viewControllers objectAtIndex:index] == self.currentViewController) return;
+    if ([self.viewControllers objectAtIndex:index] == self.currentViewController){
+        [self toggleMenuVisibility:self];
+        return;
+    }
     
     //get the replacement view controller
     UIViewController *newViewController = self.viewControllers[index];
@@ -242,7 +245,7 @@
                                options:0
                             animations:^{
                                 //move the old view controller off screen
-                                self.currentViewController.view.frame = [self offScreenFrame];
+                                //self.currentViewController.view.frame = [self offScreenFrame];
                                 
                             } completion:^(BOOL finished){
                                 [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{

@@ -20,7 +20,6 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		640BF9461A41D496003C6C46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 640BF9451A41D496003C6C46 /* Main.storyboard */; };
 		640BF9481A41D55C003C6C46 /* list23_24px.png in Resources */ = {isa = PBXBuildFile; fileRef = 640BF9471A41D55C003C6C46 /* list23_24px.png */; };
 		640BF94A1A41E08B003C6C46 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 640BF9491A41E08B003C6C46 /* MapKit.framework */; };
 		64DC30511A44CD3900AAA76E /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DC304F1A44CD3900AAA76E /* MenuTableViewCell.m */; };
@@ -29,6 +28,7 @@
 		64DC30581A44D3B600AAA76E /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 64DC30561A44CDB200AAA76E /* FontAwesome.otf */; };
 		64DC305A1A44D43800AAA76E /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64DC30591A44D43800AAA76E /* Launch Screen.xib */; };
 		64DC305D1A48AB5800AAA76E /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DC305C1A48AB5800AAA76E /* SettingsViewController.m */; };
+		64DC30931A4B20E000AAA76E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64DC30921A4B20E000AAA76E /* Main.storyboard */; };
 		64FCE0D51A44A4F7005BE2D2 /* CustomMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FCE0D41A44A4F7005BE2D2 /* CustomMenuViewController.m */; };
 		815BB15355CBEA89D95870DF /* libPods-SlideOutMenu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC9120B8D413D25F67F98F5 /* libPods-SlideOutMenu.a */; };
 		CB4E1783882BB4F166DA008B /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A086CA446FD1DEAF439EE29 /* libPods-Tests.a */; };
@@ -66,7 +66,6 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		640BF9451A41D496003C6C46 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../Documents/Main.storyboard; sourceTree = "<group>"; };
 		640BF9471A41D55C003C6C46 /* list23_24px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = list23_24px.png; path = ../list23_24px.png; sourceTree = "<group>"; };
 		640BF9491A41E08B003C6C46 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		64DC304E1A44CD3900AAA76E /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewCell.h; sourceTree = "<group>"; };
@@ -76,6 +75,7 @@
 		64DC30591A44D43800AAA76E /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "../Launch Screen.xib"; sourceTree = "<group>"; };
 		64DC305B1A48AB5700AAA76E /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		64DC305C1A48AB5800AAA76E /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		64DC30921A4B20E000AAA76E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		64FCE0D31A44A4F7005BE2D2 /* CustomMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMenuViewController.h; sourceTree = "<group>"; };
 		64FCE0D41A44A4F7005BE2D2 /* CustomMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMenuViewController.m; sourceTree = "<group>"; };
 		68290640A05DBA656499196B /* SlideOutMenu.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SlideOutMenu.podspec; path = ../SlideOutMenu.podspec; sourceTree = "<group>"; };
@@ -163,13 +163,13 @@
 		6003F593195388D20070C39A /* SlideOutMenu */ = {
 			isa = PBXGroup;
 			children = (
+				64DC30921A4B20E000AAA76E /* Main.storyboard */,
 				64DC30591A44D43800AAA76E /* Launch Screen.xib */,
 				64DC30561A44CDB200AAA76E /* FontAwesome.otf */,
 				64DC304E1A44CD3900AAA76E /* MenuTableViewCell.h */,
 				64DC304F1A44CD3900AAA76E /* MenuTableViewCell.m */,
 				64DC30501A44CD3900AAA76E /* MenuTableViewCell.xib */,
 				640BF9471A41D55C003C6C46 /* list23_24px.png */,
-				640BF9451A41D496003C6C46 /* Main.storyboard */,
 				64FCE0D31A44A4F7005BE2D2 /* CustomMenuViewController.h */,
 				64FCE0D41A44A4F7005BE2D2 /* CustomMenuViewController.m */,
 				64DC305B1A48AB5700AAA76E /* SettingsViewController.h */,
@@ -305,7 +305,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				640BF9461A41D496003C6C46 /* Main.storyboard in Resources */,
+				64DC30931A4B20E000AAA76E /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 				64DC30521A44CD3A00AAA76E /* MenuTableViewCell.xib in Resources */,

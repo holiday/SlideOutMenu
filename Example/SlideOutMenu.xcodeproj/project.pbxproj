@@ -22,6 +22,8 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		640BF9481A41D55C003C6C46 /* list23_24px.png in Resources */ = {isa = PBXBuildFile; fileRef = 640BF9471A41D55C003C6C46 /* list23_24px.png */; };
 		640BF94A1A41E08B003C6C46 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 640BF9491A41E08B003C6C46 /* MapKit.framework */; };
+		6430F3341A7FD5B0007C7631 /* CustomOrangeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 6430F3331A7FD5B0007C7631 /* CustomOrangeMenu.m */; };
+		6430F3371A7FD5DD007C7631 /* CustomSlidableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6430F3361A7FD5DD007C7631 /* CustomSlidableViewController.m */; };
 		64DC30511A44CD3900AAA76E /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DC304F1A44CD3900AAA76E /* MenuTableViewCell.m */; };
 		64DC30521A44CD3A00AAA76E /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64DC30501A44CD3900AAA76E /* MenuTableViewCell.xib */; };
 		64DC30571A44CDC100AAA76E /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 64DC30561A44CDB200AAA76E /* FontAwesome.otf */; };
@@ -68,6 +70,10 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		640BF9471A41D55C003C6C46 /* list23_24px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = list23_24px.png; path = ../list23_24px.png; sourceTree = "<group>"; };
 		640BF9491A41E08B003C6C46 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		6430F3321A7FD5B0007C7631 /* CustomOrangeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomOrangeMenu.h; sourceTree = "<group>"; };
+		6430F3331A7FD5B0007C7631 /* CustomOrangeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomOrangeMenu.m; sourceTree = "<group>"; };
+		6430F3351A7FD5DD007C7631 /* CustomSlidableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSlidableViewController.h; sourceTree = "<group>"; };
+		6430F3361A7FD5DD007C7631 /* CustomSlidableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSlidableViewController.m; sourceTree = "<group>"; };
 		64DC304E1A44CD3900AAA76E /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewCell.h; sourceTree = "<group>"; };
 		64DC304F1A44CD3900AAA76E /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
 		64DC30501A44CD3900AAA76E /* MenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
@@ -166,12 +172,16 @@
 				64DC30921A4B20E000AAA76E /* Main.storyboard */,
 				64DC30591A44D43800AAA76E /* Launch Screen.xib */,
 				64DC30561A44CDB200AAA76E /* FontAwesome.otf */,
+				640BF9471A41D55C003C6C46 /* list23_24px.png */,
+				6430F3351A7FD5DD007C7631 /* CustomSlidableViewController.h */,
+				6430F3361A7FD5DD007C7631 /* CustomSlidableViewController.m */,
+				6430F3321A7FD5B0007C7631 /* CustomOrangeMenu.h */,
+				6430F3331A7FD5B0007C7631 /* CustomOrangeMenu.m */,
+				64FCE0D31A44A4F7005BE2D2 /* CustomMenuViewController.h */,
+				64FCE0D41A44A4F7005BE2D2 /* CustomMenuViewController.m */,
 				64DC304E1A44CD3900AAA76E /* MenuTableViewCell.h */,
 				64DC304F1A44CD3900AAA76E /* MenuTableViewCell.m */,
 				64DC30501A44CD3900AAA76E /* MenuTableViewCell.xib */,
-				640BF9471A41D55C003C6C46 /* list23_24px.png */,
-				64FCE0D31A44A4F7005BE2D2 /* CustomMenuViewController.h */,
-				64FCE0D41A44A4F7005BE2D2 /* CustomMenuViewController.m */,
 				64DC305B1A48AB5700AAA76E /* SettingsViewController.h */,
 				64DC305C1A48AB5800AAA76E /* SettingsViewController.m */,
 				6003F59C195388D20070C39A /* ExampleAppDelegate.h */,
@@ -276,6 +286,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "rashaad ramdeen";
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = AGES4C3QAB;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -396,6 +409,8 @@
 			files = (
 				64FCE0D51A44A4F7005BE2D2 /* CustomMenuViewController.m in Sources */,
 				6003F59E195388D20070C39A /* ExampleAppDelegate.m in Sources */,
+				6430F3341A7FD5B0007C7631 /* CustomOrangeMenu.m in Sources */,
+				6430F3371A7FD5DD007C7631 /* CustomSlidableViewController.m in Sources */,
 				64DC30511A44CD3900AAA76E /* MenuTableViewCell.m in Sources */,
 				64DC305D1A48AB5800AAA76E /* SettingsViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* ExampleViewController.m in Sources */,
@@ -457,7 +472,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -475,6 +490,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "bd9e9669-eb57-4319-8a41-df133aa442b1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -496,7 +512,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -507,6 +523,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PROVISIONING_PROFILE = "bd9e9669-eb57-4319-8a41-df133aa442b1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -519,11 +536,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SlideOutMenu/SlideOutMenu-Prefix.pch";
 				INFOPLIST_FILE = "SlideOutMenu/SlideOutMenu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a6029390-940d-470e-a0d6-fa864b8beeb3";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -534,11 +554,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SlideOutMenu/SlideOutMenu-Prefix.pch";
 				INFOPLIST_FILE = "SlideOutMenu/SlideOutMenu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a6029390-940d-470e-a0d6-fa864b8beeb3";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

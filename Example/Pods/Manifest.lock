@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  SlideOutMenu: 69191f59b8c03ffae6b651d1caaf447ac053bb39
+  SlideOutMenu: d6e7d255b8d59c4e2aee1e86e88aa7ee901347fd
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.36.3

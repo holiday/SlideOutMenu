@@ -7,7 +7,8 @@
 //
 
 #import "ExampleAppDelegate.h"
-#import "SlidableViewController.h"
+#import "CustomMenuViewController.h"
+#import "CustomSlidableViewController.h"
 #import "CustomMenuViewController.h"
 
 @implementation ExampleAppDelegate
@@ -38,10 +39,10 @@
     //this title will be used for the menu link
     [settingsVC setTitle:@"Map Link"];
     
-    CustomMenuViewController *customMVC = (CustomMenuViewController *)[mainStoryBoard instantiateViewControllerWithIdentifier:@"customMenu"];
+    CustomMenuViewController *customMVC = (CustomMenuViewController *)[mainStoryBoard instantiateViewControllerWithIdentifier:@"CustomMenuViewController"];
     
     //our slidable menu controller
-    SlidableViewController *slidableVC = [[SlidableViewController alloc] initWithViewControllers:@[greenVC, blueVC, tableVC, mapVC, settingsVC] andMenuViewController:customMVC andMenuWidth:320];
+    CustomSlidableViewController *slidableVC = [[CustomSlidableViewController alloc] initWithViewControllers:@[greenVC, blueVC, tableVC, mapVC, settingsVC] andMenuViewController:customMVC andMenuWidth:320];
     
     self.window.rootViewController = slidableVC;
     

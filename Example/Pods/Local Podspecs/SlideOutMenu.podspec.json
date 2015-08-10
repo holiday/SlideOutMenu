@@ -1,0 +1,26 @@
+{
+  "name": "SlideOutMenu",
+  "version": "1.0.0",
+  "summary": "Slide out menu for iOS",
+  "description": "                          Customizable slide out menu for iOS. Since it relies on UIViews and \n                          uses view containment, this library is very versatile in terms of \n                          customizabiliy and configuration. \n",
+  "homepage": "https://github.com/holiday/SlideOutMenu",
+  "license": "MIT",
+  "authors": {
+    "rashaad ramdeen": "rashaad.ramdeen@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/holiday/SlideOutMenu.git",
+    "tag": "1.0.0"
+  },
+  "social_media_url": "https://twitter.com/1337holiday",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes",
+  "resource_bundles": {
+    "SlideOutMenu": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}
